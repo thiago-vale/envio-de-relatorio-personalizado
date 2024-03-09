@@ -33,7 +33,7 @@ def main():
             return styles
 
         #Extract
-        with open('caminho-para-json-com-senha') as f:
+        with open('caminho-para-o-json-com-a-senha') as f:
             user = json.load(f)
         df = pd.read_csv('./data/zomato.csv')
 
@@ -78,7 +78,7 @@ def main():
                         {html_with_css}
                         """
 
-        send.send_mail(corpo_email, 'consultoria.thiagovale@gmail.com', user['email'], user['senha'],subjetct)
+        send.send_mail(corpo_email, 'destinatario', user['email'], user['senha'],subjetct)
 
 
 
