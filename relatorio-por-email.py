@@ -44,6 +44,8 @@ def main():
                         .sort_values('aggregate_rating',ascending=False)
 
         relatorio = dados.head(10)
+        relatorio['aggregate_rating'] = relatorio['aggregate_rating'].round(2)
+        relatorio['aggregate_rating'] = relatorio['aggregate_rating'].astype(str)
         relatorio['custo'] = '$'
         relatorio = relatorio[['restaurant_id',
                         'restaurant_name',
